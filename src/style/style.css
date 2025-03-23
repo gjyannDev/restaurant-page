@@ -63,7 +63,7 @@ button {
   color: inherit;
 }
 
-p {
+p, li {
   font-family: "Source Serif 4", serif;
 }
 
@@ -73,4 +73,9 @@ h1, h2, h3, h4 {
 
 a {
   color: var(--clr-primary);
+} 
+
+li {
+  list-style: none;
+  cursor: pointer;
 }
