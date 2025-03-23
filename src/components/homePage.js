@@ -6,6 +6,7 @@ export default function HomePage() {
   const heroSecDescriptionText = document.createElement("p");
   const heroSecCTABtn = document.createElement("button");
 
+  //Setting up attributes for css style declarations
   homePageContainer.setAttribute("class", "homepage__container");
   heroSecHeaderText.setAttribute("class", "hero__header");
   heroSecDescriptionText.setAttribute("class", "hero__description");

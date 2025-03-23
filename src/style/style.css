@@ -80,6 +80,7 @@ li {
   cursor: pointer;
 }
 
+/* Homepage styles declarations */
 .homepage__container {
   margin: var(--size-6xl) 112px 0 112px;
 }
@@ -106,3 +107,4 @@ li {
   flex-direction: column;
   gap: 40px;
 }
+

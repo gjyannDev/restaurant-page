@@ -2,6 +2,7 @@ import "./style/style.css";
 import "./style/modernize.css";
 import "./style/header.css";
 import HomePage from "./components/homepage";
+import MenuPage from "./components/menuPage";
 
 let mainContentContainer = document.querySelector("#contents");
 let navLinks = document.querySelectorAll(".nav__links li");
@@ -20,7 +21,7 @@ navLinks.forEach((item) => {
     if (item.textContent === "Home") {
       mainContentContainer.appendChild(HomePage());
     } else if (item.textContent === "Menu") {
-      alert("Removed everything");
+      mainContentContainer.appendChild(MenuPage());
     } else {
       // mainContentContainer.appendChild();
     }
