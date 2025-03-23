@@ -9,6 +9,11 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+  devServer: {
+    hot: true,
+    liveReload: true, 
+    watchFiles: ["src/**/*", "./src/index.html"], 
+  },
   devtool: "eval-source-map",
   devServer: {
     watchFiles: ["./src/index.html"],

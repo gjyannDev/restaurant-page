@@ -6,6 +6,13 @@ import HomePage from "./components/homepage";
 let mainContentContainer = document.querySelector("#contents");
 let navLinks = document.querySelectorAll(".nav__links li");
 
+if (module.hot) {
+  module.hot.accept();
+}
+
+//Default content
+mainContentContainer.appendChild(HomePage())
+
 navLinks.forEach((item) => {
   item.addEventListener("click", function () {
     mainContentContainer.innerHTML = "";
@@ -15,7 +22,7 @@ navLinks.forEach((item) => {
     } else if (item.textContent === "Menu") {
       alert("Removed everything");
     } else {
-      mainContentContainer.appendChild();
+      // mainContentContainer.appendChild();
     }
   });
 });

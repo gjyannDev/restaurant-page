@@ -79,3 +79,30 @@ li {
   list-style: none;
   cursor: pointer;
 }
+
+.homepage__container {
+  margin: var(--size-6xl) 112px 0 112px;
+}
+
+.hero__header {
+  font-size: var(--size-5xl);
+  width: 550px;
+}
+
+.hero__description {
+  font-size: var(--size-xl);
+  width: 550px;
+}
+
+.hero__cta-btn {
+  font-size: var(--size-xl);
+  background-color: var(--clr-secondary);
+  padding: 16px 32px 16px 32px;
+  margin-top: var(--size-5xl);
+}
+
+.hero__tex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
