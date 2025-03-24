@@ -1,30 +1,49 @@
-function createCard(title, description, priceInfo, price) {
+function createCard(title, description, priceInfo, price, pizzaImage) {
   //create elements
   const cardContainer = document.createElement("div");
-  const priceContainer = document.createElement("div");
+  const priceContainerOne = document.createElement("div");
+  const priceContainerTwo = document.createElement("div");
   const textContainer = document.createElement("div");
   const cardTitle = document.createElement("h3");
   const cardDes = document.createElement("p");
-  const cardPriceInfo = document.createElement("p");
-  const cardPrice = document.createElement("p");
+  const cardPriceInfoOne = document.createElement("p");
+  const cardPriceInfoTwo = document.createElement("p");
+  const cardPriceOne = document.createElement("p");
+  const cardPriceTwo = document.createElement("p");
+  const pizzaImg = document.createElement("div");
 
   cardContainer.setAttribute("class", "card__container");
   cardTitle.setAttribute("class", "card__title");
   cardDes.setAttribute("class", "card__description");
-  cardPriceInfo.setAttribute("class", "card__price-info");
-  cardPrice.setAttribute("class", "card__price");
+  cardPriceInfoOne.setAttribute("class", "card__price-info-1");
+  cardPriceInfoTwo.setAttribute("class", "card__price-info-2");
+  cardPriceOne.setAttribute("class", "card__price-1");
+  cardPriceTwo.setAttribute("class", "card__price-2");
+  priceContainerOne.setAttribute("class", "price__container-1");
+  priceContainerTwo.setAttribute("class", "price__container-2");
+  textContainer.setAttribute("class", "text__container");
 
   cardTitle.textContent = title;
   cardDes.textContent = description;
-  cardPriceInfo.textContent = priceInfo;
-  cardPrice.textContent = price;
-
+  cardPriceInfoOne.textContent = priceInfo[0];
+  cardPriceInfoTwo.textContent = priceInfo[1];
+  cardPriceOne.textContent = price[0];
+  cardPriceTwo.textContent = price[1];
+  pizzaImg.style.width = "200px";
+  pizzaImg.style.height = "200px";
+  pizzaImg.style.backgroundImage = `url(${pizzaImage})`;
+  pizzaImg.style.backgroundSize = "cover"; // Adjusts image size
+  
   textContainer.appendChild(cardTitle);
   textContainer.appendChild(cardDes);
-  priceContainer.appendChild(cardPriceInfo);
-  priceContainer.appendChild(cardPrice);
+  priceContainerOne.appendChild(cardPriceInfoOne);
+  priceContainerOne.appendChild(cardPriceOne);
+  priceContainerTwo.appendChild(cardPriceInfoTwo);
+  priceContainerTwo.appendChild(cardPriceTwo);
+  cardContainer.appendChild(pizzaImg);
   cardContainer.appendChild(textContainer);
-  cardContainer.appendChild(priceContainer);
+  cardContainer.appendChild(priceContainerOne);
+  cardContainer.appendChild(priceContainerTwo);
 
   return cardContainer;
 }
@@ -43,15 +62,16 @@ export default function MenuPage() {
   //Setting up text contents
   menuHeaderText.textContent = "Pizza Menu";
 
+  //Appending content to the div
   menuContainer.appendChild(
     createCard(
       "Peperoni",
       "Gorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Big Size",
-      "399"
+      ["Big Size", "Small Size"],
+      ["399", "299"],
+      './assets/pizza-picture.png',
     )
   );
-
   menuPageContainer.appendChild(menuHeaderText);
   menuPageContainer.appendChild(menuContainer);
 
