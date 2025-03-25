@@ -108,3 +108,24 @@ li {
   gap: 40px;
 }
 
+/* Menu page style declarations */
+.menu__page-container {
+  display: flex;
+  margin: var(--size-4xl) 112px 0 112px;
+  flex-direction: column;
+  gap: var(--size-2xl);
+}
+
+.menu__text {
+  font-size: var(--size-4xl);
+}
+
+.menu__container {
+  border: 1px solid red;
+  width: 60%;
+}
+
+.card__container {
+  border: 1px solid blue;
+  display: flex;
+}

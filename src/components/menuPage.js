@@ -1,4 +1,7 @@
-function createCard(title, description, priceInfo, price, pizzaImage) {
+import PizzaOne from "/src/assets/pizza-picture.png"
+
+
+function createCard(title, description, priceInfo, price, pizzaImage, imageLoc) {
   //create elements
   const cardContainer = document.createElement("div");
   const priceContainerOne = document.createElement("div");
@@ -10,7 +13,7 @@ function createCard(title, description, priceInfo, price, pizzaImage) {
   const cardPriceInfoTwo = document.createElement("p");
   const cardPriceOne = document.createElement("p");
   const cardPriceTwo = document.createElement("p");
-  const pizzaImg = document.createElement("div");
+  const pizzaImg = document.createElement("img");
 
   cardContainer.setAttribute("class", "card__container");
   cardTitle.setAttribute("class", "card__title");
@@ -29,21 +32,23 @@ function createCard(title, description, priceInfo, price, pizzaImage) {
   cardPriceInfoTwo.textContent = priceInfo[1];
   cardPriceOne.textContent = price[0];
   cardPriceTwo.textContent = price[1];
+  pizzaImg.src = pizzaImage;
+  pizzaImg.alt = "Pizza Image";
   pizzaImg.style.width = "200px";
   pizzaImg.style.height = "200px";
-  pizzaImg.style.backgroundImage = `url(${pizzaImage})`;
-  pizzaImg.style.backgroundSize = "cover"; // Adjusts image size
-  
+  pizzaImg.style.objectFit = "cover"
+
   textContainer.appendChild(cardTitle);
   textContainer.appendChild(cardDes);
   priceContainerOne.appendChild(cardPriceInfoOne);
   priceContainerOne.appendChild(cardPriceOne);
   priceContainerTwo.appendChild(cardPriceInfoTwo);
   priceContainerTwo.appendChild(cardPriceTwo);
-  cardContainer.appendChild(pizzaImg);
+  (imageLoc === "left") && cardContainer.appendChild(pizzaImg);
   cardContainer.appendChild(textContainer);
   cardContainer.appendChild(priceContainerOne);
   cardContainer.appendChild(priceContainerTwo);
+  (imageLoc === "right") && cardContainer.appendChild(pizzaImg);
 
   return cardContainer;
 }
@@ -69,7 +74,8 @@ export default function MenuPage() {
       "Gorem ipsum dolor sit amet, consectetur adipiscing elit.",
       ["Big Size", "Small Size"],
       ["399", "299"],
-      './assets/pizza-picture.png',
+      PizzaOne,
+      "right",
     )
   );
   menuPageContainer.appendChild(menuHeaderText);
