@@ -122,6 +122,9 @@ li {
 
 .menu__container {
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
 }
 
 .card__container {
@@ -176,4 +179,8 @@ li {
 /* All Menu Parent Container */
 .all__menu-container {
   display: flex;
+}
+
+.all__menu-container {
+  margin: var(--size-4xl) 0 var(--size-4xl) 0;
 }

@@ -1,5 +1,6 @@
 import PizzaOne from "/src/assets/peperoni.png"
 
+// TODO: If the image location is right then make sure the contents are on the right side too.
 function createCard(title, description, priceInfo, price, pizzaImage, imagePosition) {
   //create elements
   const cardContainer = document.createElement("div");
@@ -16,6 +17,7 @@ function createCard(title, description, priceInfo, price, pizzaImage, imagePosit
   const cardPriceTwo = document.createElement("p");
   const pizzaImg = document.createElement("img");
 
+  // Setting attributes for elements
   cardContainer.setAttribute("class", "card__container");
   cardTitle.setAttribute("class", "card__title");
   cardDes.setAttribute("class", "card__description");
@@ -29,6 +31,7 @@ function createCard(title, description, priceInfo, price, pizzaImage, imagePosit
   priceContainer.setAttribute("class", "price__container");
   textContentContainer.setAttribute("class", "text__content-container");
 
+  // setting contents for each elements
   cardTitle.textContent = title;
   cardDes.textContent = description;
   cardPriceInfoOne.textContent = priceInfo[0];
@@ -39,14 +42,19 @@ function createCard(title, description, priceInfo, price, pizzaImage, imagePosit
   pizzaImg.alt = "Pizza Image";
   pizzaImg.style.width = "200px";
   pizzaImg.style.height = "200px";
-  pizzaImg.style.objectFit = "cover"
+  pizzaImg.style.objectFit = "cover";
+  (imagePosition === "right") && cardContainer.style.setProperty("margin-left", "124px");
+  // (imagePosition === "right") &&cardTitle.style.setProperty("text-align", "right");
 
+  // Appending it on the right container
   textContainer.appendChild(cardTitle);
   textContainer.appendChild(cardDes);
-  priceContainerOne.appendChild(cardPriceInfoOne);
+  (imagePosition === "left") && priceContainerOne.appendChild(cardPriceInfoOne);
   priceContainerOne.appendChild(cardPriceOne);
-  priceContainerTwo.appendChild(cardPriceInfoTwo);
+  (imagePosition === "right") && priceContainerOne.appendChild(cardPriceInfoOne);
+  (imagePosition === "left") && priceContainerTwo.appendChild(cardPriceInfoTwo);
   priceContainerTwo.appendChild(cardPriceTwo);
+  (imagePosition === "right") && priceContainerTwo.appendChild(cardPriceInfoTwo);
   priceContainer.appendChild(priceContainerOne);
   priceContainer.appendChild(priceContainerTwo);
   (imagePosition === "left") && cardContainer.appendChild(pizzaImg);
@@ -83,6 +91,36 @@ export default function MenuPage() {
       ["₱ 399", "₱ 299"],
       PizzaOne,
       "left",
+    )
+  );
+  menuContainer.appendChild(
+    createCard(
+      "Peperoni Pizza",
+      "Gorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      ["Big Size", "Small Size"],
+      ["₱ 399", "₱ 299"],
+      PizzaOne,
+      "right",
+    )
+  );
+  menuContainer.appendChild(
+    createCard(
+      "Peperoni Pizza",
+      "Gorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      ["Big Size", "Small Size"],
+      ["₱ 399", "₱ 299"],
+      PizzaOne,
+      "left",
+    )
+  );
+  menuContainer.appendChild(
+    createCard(
+      "Peperoni Pizza",
+      "Gorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      ["Big Size", "Small Size"],
+      ["₱ 399", "₱ 299"],
+      PizzaOne,
+      "right",
     )
   );
   allMenuContainer.appendChild(menuContainer)
