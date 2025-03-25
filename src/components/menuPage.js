@@ -1,5 +1,4 @@
-import PizzaOne from "/src/assets/pizza-picture.png"
-
+import PizzaOne from "/src/assets/peperoni.png"
 
 function createCard(title, description, priceInfo, price, pizzaImage, imageLoc) {
   //create elements
@@ -7,6 +6,8 @@ function createCard(title, description, priceInfo, price, pizzaImage, imageLoc) 
   const priceContainerOne = document.createElement("div");
   const priceContainerTwo = document.createElement("div");
   const textContainer = document.createElement("div");
+  const priceContainer = document.createElement("div");
+  const textContentContainer = document.createElement("div");
   const cardTitle = document.createElement("h3");
   const cardDes = document.createElement("p");
   const cardPriceInfoOne = document.createElement("p");
@@ -25,6 +26,8 @@ function createCard(title, description, priceInfo, price, pizzaImage, imageLoc) 
   priceContainerOne.setAttribute("class", "price__container-1");
   priceContainerTwo.setAttribute("class", "price__container-2");
   textContainer.setAttribute("class", "text__container");
+  priceContainer.setAttribute("class", "price__container");
+  textContentContainer.setAttribute("class", "text__content-container");
 
   cardTitle.textContent = title;
   cardDes.textContent = description;
@@ -44,10 +47,12 @@ function createCard(title, description, priceInfo, price, pizzaImage, imageLoc) 
   priceContainerOne.appendChild(cardPriceOne);
   priceContainerTwo.appendChild(cardPriceInfoTwo);
   priceContainerTwo.appendChild(cardPriceTwo);
+  priceContainer.appendChild(priceContainerOne);
+  priceContainer.appendChild(priceContainerTwo);
   (imageLoc === "left") && cardContainer.appendChild(pizzaImg);
-  cardContainer.appendChild(textContainer);
-  cardContainer.appendChild(priceContainerOne);
-  cardContainer.appendChild(priceContainerTwo);
+  textContentContainer.appendChild(textContainer);
+  textContentContainer.appendChild(priceContainer);
+  cardContainer.appendChild(textContentContainer);
   (imageLoc === "right") && cardContainer.appendChild(pizzaImg);
 
   return cardContainer;
@@ -70,7 +75,7 @@ export default function MenuPage() {
   //Appending content to the div
   menuContainer.appendChild(
     createCard(
-      "Peperoni",
+      "Peperoni Pizza",
       "Gorem ipsum dolor sit amet, consectetur adipiscing elit.",
       ["Big Size", "Small Size"],
       ["399", "299"],

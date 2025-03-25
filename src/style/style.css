@@ -126,6 +126,21 @@ li {
 }
 
 .card__container {
-  border: 1px solid blue;
   display: flex;
+}
+
+.price__container {
+  display: flex;
+}
+
+.price__container-1, .price__container-2 {
+  display: flex;
+}
+
+.card__title {
+  font-size: var(--size-2xl);
+}
+
+.card__description {
+  width: 350px;
 }
