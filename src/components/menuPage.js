@@ -1,6 +1,6 @@
 import PizzaOne from "/src/assets/peperoni.png"
 
-function createCard(title, description, priceInfo, price, pizzaImage, imageLoc) {
+function createCard(title, description, priceInfo, price, pizzaImage, imagePosition) {
   //create elements
   const cardContainer = document.createElement("div");
   const priceContainerOne = document.createElement("div");
@@ -49,25 +49,27 @@ function createCard(title, description, priceInfo, price, pizzaImage, imageLoc) 
   priceContainerTwo.appendChild(cardPriceTwo);
   priceContainer.appendChild(priceContainerOne);
   priceContainer.appendChild(priceContainerTwo);
-  (imageLoc === "left") && cardContainer.appendChild(pizzaImg);
+  (imagePosition === "left") && cardContainer.appendChild(pizzaImg);
   textContentContainer.appendChild(textContainer);
   textContentContainer.appendChild(priceContainer);
   cardContainer.appendChild(textContentContainer);
-  (imageLoc === "right") && cardContainer.appendChild(pizzaImg);
+  (imagePosition === "right") && cardContainer.appendChild(pizzaImg);
 
-  return cardContainer;
+  return cardContainer; 
 }
 
 export default function MenuPage() {
   //create elements
   const menuPageContainer = document.createElement("div");
   const menuContainer = document.createElement("div");
+  const allMenuContainer = document.createElement("div");
   const menuHeaderText = document.createElement("h2");
 
   //Setting attributes for the elements
   menuPageContainer.setAttribute("class", "menu__page-container");
   menuContainer.setAttribute("class", "menu__container");
   menuHeaderText.setAttribute("class", "menu__text");
+  allMenuContainer.setAttribute("class", "all__menu-container")
 
   //Setting up text contents
   menuHeaderText.textContent = "Pizza Menu";
@@ -78,13 +80,14 @@ export default function MenuPage() {
       "Peperoni Pizza",
       "Gorem ipsum dolor sit amet, consectetur adipiscing elit.",
       ["Big Size", "Small Size"],
-      ["399", "299"],
+      ["₱ 399", "₱ 299"],
       PizzaOne,
-      "right",
+      "left",
     )
   );
+  allMenuContainer.appendChild(menuContainer)
   menuPageContainer.appendChild(menuHeaderText);
-  menuPageContainer.appendChild(menuContainer);
+  menuPageContainer.appendChild(allMenuContainer);
 
   return menuPageContainer;
 }
