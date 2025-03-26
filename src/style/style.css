@@ -184,3 +184,47 @@ li {
 .all__menu-container {
   margin: var(--size-4xl) 0 var(--size-4xl) 0;
 }
+
+/* Contact page style declarations */
+.contact__page-container {
+  margin: var(--size-4xl) 112px 0 112px;
+}
+
+.contact__text {
+  font-size: var(--size-4xl);
+}
+
+.contact__content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.content__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* contact card style declarations */
+.contact__info-container {
+  display: flex;
+  align-items: baseline;
+  width: 60%;
+  justify-content: space-between;
+}
+
+.info__details {
+  width: 400px;
+}
+
+.info__details-container {
+  display: flex;
+  width: 450px;
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
