@@ -3,6 +3,7 @@ import "./style/modernize.css";
 import "./style/header.css";
 import HomePage from "./components/homepage";
 import MenuPage from "./components/menuPage";
+import ContactPage from "./components/contactPage";
 
 let mainContentContainer = document.querySelector("#contents");
 let navLinks = document.querySelectorAll(".nav__links li");
@@ -23,7 +24,7 @@ navLinks.forEach((item) => {
     } else if (item.textContent === "Menu") {
       mainContentContainer.appendChild(MenuPage());
     } else {
-      // mainContentContainer.appendChild();
+      mainContentContainer.appendChild(ContactPage());
     }
   });
 });
