@@ -43,8 +43,9 @@ function createCard(title, description, priceInfo, price, pizzaImage, imagePosit
   pizzaImg.style.width = "200px";
   pizzaImg.style.height = "200px";
   pizzaImg.style.objectFit = "cover";
-  (imagePosition === "right") && cardContainer.style.setProperty("margin-left", "124px");
-  // (imagePosition === "right") &&cardTitle.style.setProperty("text-align", "right");
+  (imagePosition === "right") && cardContainer.style.setProperty("padding-left", "124px");
+  (imagePosition === "right") && textContentContainer.style.setProperty("align-items", "end");
+  (imagePosition === "right") && textContainer.style.setProperty("text-align", "right");
 
   // Appending it on the right container
   textContainer.appendChild(cardTitle);
