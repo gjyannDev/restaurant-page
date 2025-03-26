@@ -1,6 +1,5 @@
 import PizzaOne from "/src/assets/peperoni.png"
 
-// TODO: If the image location is right then make sure the contents are on the right side too.
 function createCard(title, description, priceInfo, price, pizzaImage, imagePosition) {
   //create elements
   const cardContainer = document.createElement("div");
